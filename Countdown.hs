@@ -12,8 +12,8 @@ data Op
 
 type Value = Int
 
-display :: Show a => Expr -> a -> String
-display e v = display' e ++ " = " ++ show v
+display :: Show a => (Expr,  a) -> IO()
+display (e, v) = print $ display' e ++ " = " ++ show v
 
 display' :: Expr -> String
 display' (Num x) = show x
